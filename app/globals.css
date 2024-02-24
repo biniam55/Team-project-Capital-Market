@@ -26,6 +26,27 @@
     rgb(var(--background-start-rgb));
 } */
 
+.text-playfair {
+  font-family: var(--font-playfair);
+}
+
+.text-poppins {
+  font-family: var(--font-poppins);
+}
+
+.nav-item::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  margin-top: 0px; /* Adjust spacing from text */
+  transition: all 0.2s ease-in;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
