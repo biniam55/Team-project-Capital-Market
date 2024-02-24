@@ -5,7 +5,7 @@ import Hero from "./hero";
 const Header = () => {
   return (
     <div className="w-full h-screen">
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
     </div>
   );

@@ -5,7 +5,8 @@ const news = [
   {
     title: "News 1",
     date: "2024-02-23",
-    content: "Content of News 1",
+    content:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint excepturi iste ullam doloribus animi sunt minima ut itaque voluptatum fugiat velit nam neque error iusto maxime laboriosam doloremque, nesciunt placeat!",
   },
   {
     title: "News 2",
@@ -37,7 +38,7 @@ const news = [
 
 const News = () => {
   return (
-    <div className="h-screen">
+    <div className="h-screen flex flex-col justify-between">
       <h2 className="font-light text-2xl">Our Latest News</h2>
       <div className="grid grid-cols-3 gap-16 h-5/6 mt-16">
         {news.map((data, index) => {
@@ -51,6 +52,9 @@ const News = () => {
           );
         })}
       </div>
+      <h2 className="text-capital-purple text-sm text-center cursor-pointer">
+        More...
+      </h2>
     </div>
   );
 };
