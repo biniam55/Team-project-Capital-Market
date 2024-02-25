@@ -8,9 +8,11 @@ const Hero = () => {
   const btnStyles = `flex items-center justify-center px-8 py-2 text-sm hover:scale-110 transition-all rounded-lg text-sm`;
 
   return (
-    <div className="flex flex-row h-5/6 items-center">
-      <div className="flex flex-col gap-8 w-1/2">
-        <h1 className={`text-6xl font-playfair font-semibold w-11/12`}>
+    <div className="flex flex-col-reverse md:flex-row h-5/6 items-center justify-center md:justify-between gap-8 md:gap-0">
+      <div className="flex flex-col gap-8 w-full md:w-1/2">
+        <h1
+          className={`text-4xl md:text-6xl font-playfair font-semibold w-11/12`}
+        >
           The Ethiopian Capital Market Era
         </h1>
         <p className="w-11/12 text-lg text-gray-500 font-light">
@@ -28,11 +30,11 @@ const Hero = () => {
           </button>
         </div>
       </div>
-      <div className="w-1/2 md:pr-7 flex items-center justify-center relative">
+      <div className="w-full md:w-1/2 md:pr-7 flex items-center justify-center md:relative">
         <Image
           src={Ellipse}
           alt="Ellipse"
-          className="absolute left-20 w-8 h-w-8"
+          className="hidden md:block absolute left-20 w-8 h-w-8"
         />
         <Image src={HeroImage} alt="Hero_Image" className="-z-10 w-8/12" />
       </div>

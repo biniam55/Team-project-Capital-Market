@@ -8,7 +8,7 @@ import { IoMdMenu, IoMdClose } from "react-icons/io";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [_window, setWindowObject] = useState(null);
+  const windowScrollY = window.scrollY;
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -47,17 +47,33 @@ const Navbar = () => {
           isOpen ? "top-0 left-0 text-white" : "top-[-1000%]"
         } w-full flex items-center justify-center z-20 px-5 text-black transition-all`}
       >
-        <ul className="flex nav-menu flex-col md:flex-row gap-8 justify-center items-center cursor-pointer min-h-[30vh] md:h-auto">
-          <li className="nav-item transition-all text-center after:bg-capital-purple">
+        <ul className="flex nav-menu flex-col md:flex-row gap-8 justify-center items-center cursor-pointer h-[30vh] md:h-0">
+          <li
+            className={`${
+              scrolled && "text-white"
+            } nav-item transition-all text-center after:bg-capital-purple`}
+          >
             Home
           </li>
-          <li className="nav-item transition-all text-center after:bg-capital-purple">
+          <li
+            className={`${
+              scrolled && "text-white"
+            } nav-item transition-all text-center after:bg-capital-purple`}
+          >
             Education
           </li>
-          <li className="nav-item transition-all text-center after:bg-capital-purple">
+          <li
+            className={`${
+              scrolled && "text-white"
+            } nav-item transition-all text-center after:bg-capital-purple`}
+          >
             News
           </li>
-          <li className="nav-item transition-all text-center after:bg-capital-purple">
+          <li
+            className={`${
+              scrolled && "text-white"
+            } nav-item transition-all text-center after:bg-capital-purple`}
+          >
             Profile
           </li>
           <li

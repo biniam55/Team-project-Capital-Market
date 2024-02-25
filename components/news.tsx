@@ -38,9 +38,9 @@ const news = [
 
 const News = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-between">
+    <div className="min-h-screen flex flex-col">
       <h2 className="font-light text-2xl">Our Latest News</h2>
-      <div className="grid grid-cols-3 gap-16 h-5/6 mt-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-16 h-5/6 mt-16">
         {news.map((data, index) => {
           return (
             <NewsComponent
@@ -52,7 +52,7 @@ const News = () => {
           );
         })}
       </div>
-      <h2 className="text-capital-purple text-sm text-center cursor-pointer">
+      <h2 className="text-capital-purple text-sm text-center cursor-pointer mt-8">
         More...
       </h2>
     </div>
