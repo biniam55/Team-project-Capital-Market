@@ -34,7 +34,7 @@ const Hero = () => {
           alt="Ellipse"
           className="absolute left-20 w-8 h-w-8"
         />
-        <Image src={HeroImage} alt="Hero_Image" className="w-8/12" />
+        <Image src={HeroImage} alt="Hero_Image" className="-z-10 w-8/12" />
       </div>
     </div>
   );

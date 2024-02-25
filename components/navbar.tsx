@@ -1,45 +1,68 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
-import Logo from "@/assets/img/logo.svg";
+import React, { useEffect, useState } from "react";
+import Logo from "@/assets/img/capitalLogo.png";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [_window, setWindowObject] = useState(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     console.log(isOpen);
   };
+
+  useEffect(() => {
+    // setWindowObject(window);
+    const handleScroll = () => {
+      if (typeof window !== "undefined" && window.scrollY > 30) {
+        setScrolled(true);
+        console.log(window.scrollY);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [window.scrollY]);
+
   return (
     <div
-      className={`w-full flex flex-row justify-between py-4 text-sm ${
-        isOpen ? "fixed top-0 left-0 px-8" : "sticky top-0"
-      } transition-all`}
+      className={`w-full flex flex-row justify-between py-4 text-sm transition-all duration-200 px-8 ${
+        scrolled && "bg-capital-purple"
+      } ${isOpen ? "fixed top-0 left-0" : "sticky top-0"} transition-all`}
     >
-      <div className="w-6 h-6">
+      <div className="w-full h-6">
         <Image src={Logo} alt="Capital Market" />
       </div>
       <div
         className={`md:static md:min-h-fit md:w-auto md:bg-transparent absolute min-h-[60vh] bg-capital-purple left-0 ${
-          isOpen ? "top-0 left-0" : "top-[-1000%]"
-        } w-full flex items-center z-20 px-5 text-black transition-all`}
+          isOpen ? "top-0 left-0 text-white" : "top-[-1000%]"
+        } w-full flex items-center justify-center z-20 px-5 text-black transition-all`}
       >
-        <ul className="md:flex nav-menu flex-col md:flex-row md:gap-8 gap-16 md:items-center cursor-pointer">
-          <li className="nav-item transition-all after:bg-capital-purple">
+        <ul className="flex nav-menu flex-col md:flex-row gap-8 justify-center items-center cursor-pointer min-h-[30vh] md:h-auto">
+          <li className="nav-item transition-all text-center after:bg-capital-purple">
             Home
           </li>
-          <li className="nav-item transition-all after:bg-capital-purple">
+          <li className="nav-item transition-all text-center after:bg-capital-purple">
             Education
           </li>
-          <li className="nav-item transition-all after:bg-capital-purple">
+          <li className="nav-item transition-all text-center after:bg-capital-purple">
             News
           </li>
-          <li className="nav-item transition-all after:bg-capital-purple">
+          <li className="nav-item transition-all text-center after:bg-capital-purple">
             Profile
           </li>
-          <li className="bg-capital-purple border border-transparent text-white px-5 py-1.5 text-center rounded-sm hover:text-gray-800 hover:bg-transparent hover:border-capital-purple transition-all duration-300 ease-in-out">
+          <li
+            className={` bg-white md:bg-capital-purple border border-transparent text-black md:text-white px-5 py-1.5 text-center rounded-sm hover:border-white md:hover:text-gray-800 md:hover:bg-transparent md:hover:border-capital-purple transition-all duration-300 ease-in-out cursor-pointer`}
+          >
             <Link href={"/login"}>Login</Link>
           </li>
         </ul>
@@ -50,9 +73,14 @@ const Navbar = () => {
         onClick={toggleMenu}
       >
         {!isOpen ? (
-          <IoMdMenu className="text-capital-purple" size={25} />
+          <IoMdMenu
+            className={`${
+              scrolled ? "text-capital-white" : "text-capital-purple"
+            } transition-all`}
+            size={30}
+          />
         ) : (
-          <IoMdClose className="text-white" />
+          <IoMdClose className="text-white" size={30} />
         )}
         {/* <IoMdMenu className="text-capital-purple"/> */}
         {/* <div

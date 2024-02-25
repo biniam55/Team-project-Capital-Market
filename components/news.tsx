@@ -38,7 +38,7 @@ const news = [
 
 const News = () => {
   return (
-    <div className="h-screen flex flex-col justify-between">
+    <div className="min-h-screen flex flex-col justify-between">
       <h2 className="font-light text-2xl">Our Latest News</h2>
       <div className="grid grid-cols-3 gap-16 h-5/6 mt-16">
         {news.map((data, index) => {
