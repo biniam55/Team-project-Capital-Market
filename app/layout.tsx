@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Poppins, Playfair_Display, Bebas_Neue } from "next/font/google";
 import "./globals.css";
-
 const inter = Inter({
   weight: ["200", "300", "400", "500", "600", "700"],
   style: ["normal"],
@@ -44,12 +43,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <html lang="en">
-      <body
-        className={`${poppins.variable} ${playfair.variable} ${bebas.variable} ${inter.variable}`}
-      >
-        {children}
+      <body className={`${poppins.variable} ${playfair.variable} ${bebas.variable} ${inter.variable}`}>
+          {children}
       </body>
     </html>
   );
