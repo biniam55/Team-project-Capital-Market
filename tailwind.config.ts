@@ -16,8 +16,8 @@ const config: Config = {
       colors: {
         "capital-purple": "#8138DF",
         "capital-white": "rgba(245, 245, 246, 1)",
-        mycolor: "rgba(129, 56, 223, 1)",
-        mycolor1: "rgba(245, 245, 246, 1)",
+        "mycolor": "rgba(20, 27, 43, 1)",
+        "mycolor1": "rgba(245, 245, 246, 1)",
         "capital-deep-blue": "rgba(20, 27, 43, 1)",
         "capital-green": "rgba(20, 157, 82, 1)",
       },

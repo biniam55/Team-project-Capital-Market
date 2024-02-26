@@ -35,51 +35,45 @@ const Navbar = () => {
 
   return (
     <div
-      className={`w-full flex flex-row justify-between py-4 text-sm transition-all duration-200 px-8 ${
-        scrolled && "bg-capital-purple"
-      } ${isOpen ? "fixed top-0 left-0" : "sticky top-0"} transition-all`}
+      className={`w-full flex flex-row justify-between py-4 text-sm transition-all duration-200 px-8 ${scrolled && "bg-capital-purple"
+        } ${isOpen ? "fixed top-0 left-0" : "sticky top-0"} transition-all`}
     >
       <div className="w-full h-6">
         <Image src={Logo} alt="Capital Market" />
       </div>
       <div
-        className={`md:static md:min-h-fit md:w-auto md:bg-transparent absolute min-h-[60vh] bg-capital-purple left-0 ${
-          isOpen ? "top-0 left-0 text-white" : "top-[-1000%]"
-        } w-full flex items-center justify-center z-20 px-5 text-black transition-all`}
+        className={`md:static md:min-h-fit md:w-auto md:bg-transparent absolute min-h-[60vh] bg-capital-purple left-0 ${isOpen ? "top-0 left-0 text-white" : "top-[-1000%]"
+          } w-full flex items-center justify-center z-20 px-5 text-black transition-all`}
       >
         <ul className="flex nav-menu flex-col md:flex-row gap-8 justify-center items-center cursor-pointer h-[30vh] md:h-0">
           <li
-            className={`${
-              scrolled && "text-white"
-            } nav-item transition-all text-center after:bg-capital-purple`}
+            className={`${scrolled && "text-white"
+              } nav-item transition-all text-center after:bg-capital-purple`}
           >
             Home
           </li>
           <li
-            className={`${
-              scrolled && "text-white"
-            } nav-item transition-all text-center after:bg-capital-purple`}
+            className={`${scrolled && "text-white"
+              } nav-item transition-all text-center after:bg-capital-purple`}
           >
             Education
           </li>
           <li
-            className={`${
-              scrolled && "text-white"
-            } nav-item transition-all text-center after:bg-capital-purple`}
+            className={`${scrolled && "text-white"
+              } nav-item transition-all text-center after:bg-capital-purple`}
           >
             News
           </li>
           <li
-            className={`${
-              scrolled && "text-white"
-            } nav-item transition-all text-center after:bg-capital-purple`}
+            className={`${scrolled && "text-white"
+              } nav-item transition-all text-center after:bg-capital-purple`}
           >
             Profile
           </li>
           <li
             className={` bg-white md:bg-capital-purple border border-transparent text-black md:text-white px-5 py-1.5 text-center rounded-sm hover:border-white md:hover:text-gray-800 md:hover:bg-transparent md:hover:border-capital-purple transition-all duration-300 ease-in-out cursor-pointer`}
           >
-            <Link href={"/login"}>Login</Link>
+            <Link href={"/signup"}>Login</Link>
           </li>
         </ul>
       </div>
@@ -90,9 +84,8 @@ const Navbar = () => {
       >
         {!isOpen ? (
           <IoMdMenu
-            className={`${
-              scrolled ? "text-capital-white" : "text-capital-purple"
-            } transition-all`}
+            className={`${scrolled ? "text-capital-white" : "text-capital-purple"
+              } transition-all`}
             size={30}
           />
         ) : (

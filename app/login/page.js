@@ -51,7 +51,7 @@ const Login = () => {
 
           <div className="items-center font-poppins text-xl text-mycolor1 ml:50 lg:ml-10">
 
-            <p className="items-center mt-5 lg:text-3xl ml-[7.5rem] md:ml-[13rem] lg:ml-[4rem]">Welcome Back</p>
+            <p className="items-center mt-5 lg:text-3xl ml-[7.5rem] md:ml-[13rem] lg:ml-[3rem]">Welcome Back</p>
             <div className="img w-[100%]  mr-10 align-center justify-center lg:h-[50vh] mt:[10%] lg:mt-[30%] ">
               <Image src={Loginwoman} alt="Loginwoman" className=" loginwoman" />
             </div>
