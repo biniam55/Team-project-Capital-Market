@@ -2,19 +2,15 @@ import mongoose from "mongoose";
 
 const connect = async () => {
   try {
-    // Check if there's already an existing connection
     if (mongoose.connection.readyState !== 0) {
       console.log("MongoDB connection is already established.");
       return;
     }
-
-    // Connect to MongoDB
     await mongoose.connect(process.env.MONGO_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
 
-    // Check the connection status after connecting
     if (mongoose.connection.readyState === 1) {
       console.log("MongoDB connection successfully established.");
     } else {
