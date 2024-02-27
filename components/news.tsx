@@ -52,8 +52,8 @@ const News = () => {
           );
         })}
       </div>
-      <h2 className="text-capital-purple text-sm text-center cursor-pointer mt-8">
-        More...
+      <h2 className="text-capital-green text-sm text-center cursor-pointer mt-8">
+        Load More...
       </h2>
     </div>
   );

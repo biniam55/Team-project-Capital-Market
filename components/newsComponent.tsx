@@ -18,7 +18,7 @@ const NewsComponent: React.FC<NewsComponentProps> = ({
       <div className="h-24 flex flex-nowrap flex-grow-0 overflow-hidden">
         {content}
       </div>
-      <h2 className="text-sm text-center text-capital-purple cursor-pointer">
+      <h2 className="text-sm text-center text-capital-green cursor-pointer">
         Read Full News
       </h2>
     </div>

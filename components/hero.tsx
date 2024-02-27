@@ -11,11 +11,11 @@ const Hero = () => {
     <div className="flex flex-col-reverse md:flex-row h-5/6 items-center justify-center md:justify-between gap-8 md:gap-0">
       <div className="flex flex-col gap-8 w-full md:w-1/2">
         <h1
-          className={`text-4xl md:text-6xl font-playfair font-semibold w-11/12`}
+          className={`text-4xl md:text-6xl font-playfair font-semibold w-full md:w-11/12`}
         >
           The Ethiopian Capital Market Era
         </h1>
-        <p className="w-11/12 text-lg text-gray-500 font-light">
+        <p className="w-full md:w-11/12 text-lg text-gray-500 font-light">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in
           libero risus semper habitant arcu eget. Et integer facilisi eget diam.
         </p>
