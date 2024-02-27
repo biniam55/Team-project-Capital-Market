@@ -121,7 +121,7 @@ const Login = () => {
 
         <div
           id="welcome"
-          className="flex flex-col-reverse lg:flex-row w-full lg:w-3/5 bg-w-[200px] bg text-black py-2  lg:py-36 px-2 lg:px-12"
+          className="flex justify-center items-center w-1/2 flex-col-reverse lg:flex-row lg:w-3/5 bg-w-[200px] bg text-black py-2  lg:py-36 px-2 lg:px-12"
         >
           <div className="items-center font-poppins text-xl text-mycolor1 ml:50 lg:ml-10">
             <p className="items-center mt-5 lg:text-3xl ml-[7.5rem] md:ml-[13rem] lg:ml-[3rem]">
