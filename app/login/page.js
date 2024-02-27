@@ -5,6 +5,7 @@ import { FaRegUser } from "react-icons/fa";
 import { MdLockOutline } from "react-icons/md";
 import Loginwoman from "@/assets/img/loginwoman.png";
 const Login = () => {
+
   return (
     <main className="flex sm-w-full flex-col items-center justify-between overflow-hidden h-[100vh]">
       <div
@@ -33,6 +34,7 @@ const Login = () => {
                   placeholder="Username"
                   className="bg-gray-100 outline-none text-sm flex-1"
                 />
+
               </div>
               <div className="bg-gray-100 rounded-2xl w-64 p-2 flex items-center mb-3 ">
                 <MdLockOutline className="text-gray-400 mr-2" />
@@ -41,14 +43,14 @@ const Login = () => {
                   name="password"
                   placeholder="Password"
                   className="bg-gray-100 outline-none text-sm flex-1"
+
                 />
               </div>
-              <a
-                href="#"
+              <button
                 className="border-2 border-mycolor-500 bg-mycolor text-mycolor1 rounded-full px-12 py-2 inline-block font-semibold hover:bg-mycolor-500 hover:text-white"
               >
                 Sign In
-              </a>
+              </button>
               <button className="bg-white border py-2 w-60 rounded-xl mt-5 flex justify-center items-center">
                 Sign Up with other
               </button>
@@ -124,10 +126,10 @@ const Login = () => {
           className="flex flex-col-reverse lg:flex-row w-full lg:w-3/5 bg-w-[200px] bg text-black py-2  lg:py-36 px-2 lg:px-12"
         >
           <div className="items-center font-poppins text-xl text-mycolor1 ml:50 lg:ml-10">
-            <p className="items-center mt-5 lg:text-3xl ml-[7.5rem] md:ml-[13rem] lg:ml-[3rem]">
+            <p className="items-center mt-5 lg:text-3xl ml-[7.5rem] md:ml-[13rem] lg:ml-[8rem]">
               Welcome Back
             </p>
-            <div className="img w-[100%]  mr-10 align-center justify-center lg:h-[50vh] mt:[10%] lg:mt-[30%] ">
+            <div className="img w-[100%]  mr-10 align-center justify-center lg:h-[50vh] mt:[10%] lg:mt-[10%] ">
               <Image
                 src={Loginwoman}
                 alt="Loginwoman"

@@ -43,7 +43,7 @@ export const authOptions = {
       clientId: process.env.FACEBOOK_ID ?? "",
       clientSecret: process.env.FACEBOOK_SECRET ?? "",
     }),
-  
+
   ],
   callbacks: {
     async signIn({ user, account }: { user: AuthUser; account: Account }) {
