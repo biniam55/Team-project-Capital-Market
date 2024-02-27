@@ -14,10 +14,10 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        "capital-purple": "#8138DF",
+        "capital-purple": "rgba(20, 27, 43, 1)",
         "capital-white": "rgba(245, 245, 246, 1)",
-        "mycolor": "rgba(20, 27, 43, 1)",
-        "mycolor1": "rgba(245, 245, 246, 1)",
+        mycolor: "rgba(20, 27, 43, 1)",
+        mycolor1: "rgba(245, 245, 246, 1)",
         "capital-deep-blue": "rgba(20, 27, 43, 1)",
         "capital-green": "rgba(20, 157, 82, 1)",
       },

@@ -11,6 +11,7 @@ const connect = async () => {
       useUnifiedTopology: true,
     });
 
+    // Check the connection status after connecting
     if (mongoose.connection.readyState === 1) {
       console.log("MongoDB connection successfully established.");
     } else {
