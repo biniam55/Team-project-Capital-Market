@@ -1,10 +1,59 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaRegUser } from "react-icons/fa";
 import { MdLockOutline } from "react-icons/md";
 import Bicycle from "@/assets/img/bicycle.png";
+import { useRouter } from "next/navigation";
+// import { useSession } from "next-auth/react";
 const SignUp = () => {
+  const [error, setError] = useState("");
+  const router = useRouter();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+
+  const isValidEmail = (email, string) => {
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    return emailRegex.test(email);
+  };
+
+  const SignUp = async (e) => {
+    e.preventDefault();
+
+    if (!isValidEmail(email)) {
+      setError("Email is invalid");
+      return;
+    }
+
+    if (!password || password.length < 8) {
+      setError("Password is invalid");
+      return;
+    }
+    try {
+      const res = await fetch("/api/route", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+      if (res.status === 400) {
+        setError("This email is already registered");
+      }
+      if (res.status === 200) {
+        setError("");
+        router.push("/login");
+      }
+    } catch (error) {
+      setError("Error, try again");
+      console.log(error);
+    }
+  };
   return (
     <main className="flex sm-w-full flex-col  items-center justify-between p-full lg:p-24 ">
       <div id="login" className="bg-white flex flex-col-reverse lg:flex-row   shadow-2xl  flex w-600 lg:w-[1140px] h-100 lg:h-[700px] max-w-4xl">
@@ -20,13 +69,20 @@ const SignUp = () => {
             <p className=" text-gray-600 my-3 text-xs"> How to i get started lorem ipsum dolor at?</p>
             <div className="flex flex-col items-center">
               <div className="bg-gray-100 rounded-2xl w-64 p-2 flex items-center mb-3 ">< FaRegUser className="text-gray-400 mr-2" />
-                <input type="email" name="email" placeholder="Username" className="bg-gray-100 outline-none text-sm flex-1" />
+                <input type="email" name="email" placeholder="Username/email"
+                  className="bg-gray-100 outline-none text-sm flex-1"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)} />
               </div>
               <div className="bg-gray-100 rounded-2xl w-64 p-2 flex items-center mb-3 "><MdLockOutline className="text-gray-400 mr-2" />
-                <input type="password" name="password" placeholder="Password" className="bg-gray-100 outline-none text-sm flex-1" />
+                <input type="password" name="password" placeholder="Password"
+                  className="bg-gray-100 outline-none text-sm flex-1"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)} />
               </div>
-              <a href="#" className="border-2 border-mycolor-500 bg-mycolor text-mycolor1 rounded-full px-12 py-2 inline-block font-semibold hover:bg-mycolor-500 hover:text-white">
-                Sign Up</a>
+              <button type="submit" onClick={SignUp} className="border-2 border-mycolor-500 bg-mycolor text-mycolor1 rounded-full px-12 py-2 inline-block font-semibold hover:bg-mycolor-500 hover:text-white">
+                Sign Up</button>
+              <p className="text-red-600 text-[16px] mb-4">{error && error}</p>
               <a href="" className="bg-white border py-2 w-60 rounded-xl mt-5 flex justify-center items-center">
                 Sign Up with other</a>
               <a href="/https://www.google.com" className="bg-white border py-2 w-60 rounded-xl mt-5 flex justify-center items-center">
