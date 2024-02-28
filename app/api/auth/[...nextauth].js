@@ -46,7 +46,7 @@ export const authOptions = {
 
   ],
   callbacks: {
-    async signIn({ user, account }: { user: AuthUser; account: Account }) {
+    async signIn({ user, account }) {
       if (account?.provider == "credentials") {
         return true;
       }
