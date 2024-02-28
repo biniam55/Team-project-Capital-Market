@@ -10,10 +10,10 @@ const Footer = () => {
       {/* Icons */}
       <div className="flex flex-col w-full md:w-2/12">
         <div className="flex flex-row  justify-center gap-6">
-          <FaFacebookF className="cursor-pointer" size={22} />
-          <FaXTwitter className="cursor-pointer" size={22} />
-          <FaInstagram className="cursor-pointer" size={22} />
-          <IoVideocam className="cursor-pointer" size={22} />
+          <FaFacebookF className="cursor-pointer" size={21} />
+          <FaXTwitter className="cursor-pointer" size={21} />
+          <FaInstagram className="cursor-pointer" size={21} />
+          <IoVideocam className="cursor-pointer" size={21} />
         </div>
         <p className={`${smallText} text-center mt-4`}>
           &copy; 2024 Capital Market.
@@ -29,7 +29,7 @@ const Footer = () => {
             <p className={`${smallText}`}>Strategy</p>
           </div>
         </div>
-        <div className="flex w-1/3 flex-col items-center border-x border-gray-600">
+        <div className="flex w-1/3 flex-col items-center md:border-x border-gray-600">
           <h2 className="text-sm font-medium">Quick Links</h2>
           <div className="flex flex-col items-center justify-center gap-2">
             <p className={`${smallText}`}>News</p>
@@ -38,7 +38,7 @@ const Footer = () => {
             <p className={`${smallText}`}>General News</p>
           </div>
         </div>
-        <div className="flex w-1/3 flex-col items-center border-r border-gray-600">
+        <div className="flex w-1/3 flex-col items-center md:border-r border-gray-600">
           <h2 className="text-sm font-medium">Contact Us</h2>
           <div className="flex flex-col items-center justify-center gap-2">
             <p className={`${smallText}`}>011-563-2512</p>

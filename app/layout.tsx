@@ -43,11 +43,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${playfair.variable} ${bebas.variable} ${inter.variable}`}>
-          {children}
+      <body
+        className={`${poppins.variable} ${playfair.variable} ${bebas.variable} ${inter.variable}`}
+      >
+        {children}
       </body>
     </html>
   );
