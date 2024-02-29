@@ -4,11 +4,11 @@ import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 
 export const POST = async (request) => {
-  const { username, password } = await request.json();
+  const { email, password } = await request.json();
 
   await connect();
 
-  const existingUser = await User.findOne({ username });
+  const existingUser = await User.findOne({ email });
 
   if (existingUser) {
     return new NextResponse("Username is already in use", { status: 400 });
@@ -16,7 +16,7 @@ export const POST = async (request) => {
 
   const hashedPassword = await bcrypt.hash(password, 5);
   const newUser = new User({
-    username,
+    email,
     password: hashedPassword,
   });
 

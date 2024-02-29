@@ -7,20 +7,20 @@ import bcrypt from "bcryptjs";
 import User from "@/models/User";
 import connect from "@/utils/db";
 
-export const authOptions = {
+export const authOptions: any = {
   // Configure one or more authentication providers
   providers: [
     CredentialsProvider({
       id: "credentials",
       name: "Credentials",
       credentials: {
-        username: { label: "username", type: "text" },
+        email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials) {
+      async authorize(credentials: any) {
         await connect();
         try {
-          const user = await User.findOne({ username: credentials.username });
+          const user = await User.findOne({ email: credentials.email });
           if (user) {
             const isPasswordCorrect = await bcrypt.compare(
               credentials.password,
@@ -31,8 +31,9 @@ export const authOptions = {
             }
           }
         } catch (err) {
-          throw new Error(err);
+          throw new Error(err.message);
         }
+        return null;
       },
     }),
     GoogleProvider({
@@ -46,28 +47,27 @@ export const authOptions = {
 
   ],
   callbacks: {
-    async signIn({ user, account }) {
-      if (account?.provider == "credentials") {
+    async signIn({ user, account }: { user: AuthUser; account: Account }) {
+      if (account?.provider === "credentials") {
         return true;
       }
-      if (account?.provider == "google" || account?.provider == "facebook") {
+      if (account?.provider === "google" || account?.provider === "facebook") {
         await connect();
         try {
-          const existingUser = await User.findOne({ username: user.username });
+          const existingUser = await User.findOne({ email: user.email });
           if (!existingUser) {
             const newUser = new User({
-              username: user.username,
+              email: user.email,
             });
-
             await newUser.save();
-            return true;
           }
           return true;
         } catch (err) {
-          console.log("Error saving user", err);
-          return false;
+          console.error("Error saving user", err);
+          throw new Error("Failed to save user");
         }
       }
+      return false;
     },
   },
 };

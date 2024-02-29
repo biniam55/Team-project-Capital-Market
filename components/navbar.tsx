@@ -4,8 +4,10 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Logo from "@/assets/img/capitalLogo.png";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
+import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
+  const { data: session }: any = useSession();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -68,13 +70,16 @@ const Navbar = () => {
           >
             News
           </li>
-          <li
+          {!session?(
+            <>
+               <li
             className={`${
               scrolled && "text-white"
             } nav-item transition-all text-center after:bg-capital-purple`}
           >
             Profile
           </li>
+
           <li
             className={` bg-white md:bg-capital-purple border border-transparent text-black  px-5 py-1.5 text-center rounded-sm hover:border-white md:hover:text-gray-800 md:hover:bg-transparent md:hover:border-capital-purple transition-all duration-300 ease-in-out cursor-pointer ${
               scrolled
@@ -82,8 +87,25 @@ const Navbar = () => {
                 : "md:text-white"
             }`}
           >
-            <Link href={"/signup"}>Login</Link>
+            <Link href={"/login"}>Login</Link>
           </li>
+            </>
+          ) :(
+            <>
+            {session.user?.email}
+            <li>
+              <button
+                onClick={() => {
+                  signOut();
+                }}
+                className="p-2 px-5 -mt-1 bg-blue-800 rounded-full"
+              >
+                Logout
+              </button>
+            </li>
+          </>
+          )}
+         
         </ul>
       </div>
 
