@@ -20,6 +20,7 @@ const config: Config = {
         mycolor1: "rgba(245, 245, 246, 1)",
         "capital-deep-blue": "rgba(20, 27, 43, 1)",
         "capital-green": "rgba(20, 157, 82, 1)",
+        "dashboard-bg": "rgba(82, 82, 82, 1)",
       },
       fontFamily: {
         poppins: ["var(--font-poppins)"],

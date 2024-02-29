@@ -5,7 +5,7 @@ import React from "react";
 
 const News = () => {
   return (
-    <div>
+    <div className="font-poppins">
       <Navbar />
       <NewsPage />
       <Footer />

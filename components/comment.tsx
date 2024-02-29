@@ -5,7 +5,7 @@ import CommentProfile from "./commentProfile";
 
 const Comment = () => {
   return (
-    <div>
+    <div className="font-bebas">
       <h2 className="font-bold text-xl my-4">Comments</h2>
       {/* Comment Container */}
       <div>
