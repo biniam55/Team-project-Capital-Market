@@ -18,9 +18,9 @@ const Page = () => {
   return (
     <DashboardLayout>
       <div className="flex justify-between">
-        <div className="w-full flex flex-row">
-          <div className="w-10/12 flex items-center justify-center">
-            <div className="flex flex-row items-center w-4/6 bg-gray-300 px-4 py-2 rounded-lg ">
+        <div className="w-full md:w-full flex flex-row gap-4 md:gap-0">
+          <div className="w-3/4 md:w-10/12 flex items-center justify-center">
+            <div className="flex flex-row items-center w-full md:w-4/6 bg-gray-300 px-4 py-2 rounded-lg ">
               <input
                 type="text"
                 className="bg-transparent w-full outline-none text-sm"
@@ -29,7 +29,7 @@ const Page = () => {
               <CiSearch />
             </div>
           </div>
-          <div className="min-w-[20%] flex items-center justify-end">
+          <div className="w-1/2 md:min-w-[20%] flex items-center justify-end">
             <div className="relative rounded-full  flex flex-row items-center gap-6">
               {/* Profile */}
               <div className="flex flex-row items-center justify-between gap-2">

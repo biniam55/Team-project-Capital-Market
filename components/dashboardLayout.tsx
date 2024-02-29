@@ -32,7 +32,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
       </div>
       <div className="flex">
         <Nav show={showNav} />
-        <div className="flex-grow p-4 border-l-4 border-gray-400">
+        <div className="flex-grow p-4 md:border-l-4 border-gray-400">
           {children}
         </div>
       </div>
