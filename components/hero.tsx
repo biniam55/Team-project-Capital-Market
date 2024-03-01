@@ -16,8 +16,10 @@ const Hero = () => {
           The Ethiopian Capital Market Era
         </h1>
         <p className="w-full md:w-11/12 text-lg text-gray-500 font-light">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in
-          libero risus semper habitant arcu eget. Et integer facilisi eget diam.
+          Capital markets are financial markets that bring buyers and sellers together
+          to trade stocks, bonds, currencies, and other financial assets. Capital markets
+          include the stock market and the bond market. They help people with ideas become
+          entrepreneurs and help small businesses grow into big companies.
         </p>
         <div className="flex flex-row gap-8">
           <button className={`${btnStyles} bg-capital-purple text-white`}>

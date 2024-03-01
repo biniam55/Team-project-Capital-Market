@@ -11,11 +11,12 @@ const About = () => {
       <div className="w-full md:w-1/2 text-white flex flex-col justify-center items-center px-8 gap-6">
         <h2 className="font-inter text-4xl">Capital Market</h2>
         <p className="text-sm">
-          Sed eius amet consectetur neque numquam velit. Eius adipisci magnam
-          porro labore. Dolore est sed ipsum quisquam aliquam tempora. Non
-          quisquam dolorem etincidunt quaerat dolor. Modi quiquia ipsum non
-          quaerat velit. Voluptatem eius voluptatem numquam modi numquam eius
-          sed. Numquam modi non numquam. Ipsum ut eius sit est magnam.
+          Capital markets are where savings and investments are channeled between suppliers and those in need.
+          Suppliers are people or institutions with capital to lend or invest and typically include banks and
+          investors. Those who seek capital in this market are businesses, governments, and individuals. Capital
+          markets are composed of primary and secondary markets. The most common capital markets are the stock
+          market and the bond market. They seek to improve transactional efficiencies by bringing suppliers together
+          with those seeking capital and providing a place where they can exchange securities.
         </p>
         <h3 className="font-bebas text-capital-green cursor-pointer text-lg">
           READ MORE
