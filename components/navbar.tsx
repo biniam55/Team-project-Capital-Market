@@ -61,7 +61,7 @@ const Navbar = () => {
               scrolled && "text-white"
             } nav-item transition-all text-center after:bg-capital-purple`}
           >
-            Education
+              <Link href={"/education"}>Education   </Link>
           </li>
           <li
             className={`${
