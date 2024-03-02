@@ -102,7 +102,9 @@ const Login = () => {
                       className="bg-gray-100 outline-none text-sm flex-1"
                     />
                   </div>
+                  
                   {error && <p className="text-red-500">{error}</p>}
+                  
                   <button
                     type="submit"
                     className="border-2 border-mycolor-500 bg-mycolor text-mycolor1 rounded-full px-12 py-2 inline-block font-semibold hover:bg-mycolor-500 hover:text-white"

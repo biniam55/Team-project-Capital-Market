@@ -30,7 +30,7 @@ export const authOptions: any = {
               return user;
             }
           }
-        } catch (err) {
+        } catch (err:any) {
           throw new Error(err.message);
         }
         return null;
