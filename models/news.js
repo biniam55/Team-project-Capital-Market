@@ -1,15 +1,17 @@
 import mongoose from "mongoose";
-
-const newsSchema = new mongoose.Schema(
+const { Schema } = mongoose;
+const newsSchema = new Schema(
   {
     title: String,
     description: String,
   },
   {
-    timestamps: true,
+    timestamps: true
   }
 );
 
-const news = mongoose.model("news", newsSchema);
+export default mongoose.models.news || mongoose.model("news", newsSchema);
 
-export default news;
+
+
+

@@ -2,16 +2,19 @@ import mongoose from "mongoose";
 
 const connect = async () => {
   try {
+    // Check if there is an existing connection
     if (mongoose.connection.readyState !== 0) {
       console.log("MongoDB connection is already established.");
       return;
     }
-    await mongoose.connect(process.env.MONGO_URL, {
+
+    // Connect to MongoDB
+    await mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
 
-    // Check the connection status after connecting
+    // Check if the connection is successfully established
     if (mongoose.connection.readyState === 1) {
       console.log("MongoDB connection successfully established.");
     } else {
@@ -24,3 +27,4 @@ const connect = async () => {
 };
 
 export default connect;
+

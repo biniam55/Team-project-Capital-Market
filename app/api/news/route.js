@@ -1,3 +1,4 @@
+
 import news from "@/models/news";
 import { NextResponse } from "next/server";
 import connectmongodb from "@/utils/mongodb";

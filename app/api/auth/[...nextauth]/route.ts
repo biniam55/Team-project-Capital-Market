@@ -5,7 +5,7 @@ import FacebookProvider from "next-auth/providers/facebook";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import User from "@/models/User";
-import connect from "@/utils/db";
+import connectmongodb from "@/utils/mongodb";
 
 export const authOptions: any = {
   // Configure one or more authentication providers
@@ -18,7 +18,7 @@ export const authOptions: any = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials: any) {
-        await connect();
+        await connectmongodb();
         try {
           const user = await User.findOne({ email: credentials.email });
           if (user) {
@@ -52,7 +52,7 @@ export const authOptions: any = {
         return true;
       }
       if (account?.provider === "google" || account?.provider === "facebook") {
-        await connect();
+        await connectmongodb();
         try {
           const existingUser = await User.findOne({ email: user.email });
           if (!existingUser) {
