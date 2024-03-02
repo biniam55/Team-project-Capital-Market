@@ -1,5 +1,8 @@
-import React from "react";
+'use client'
+import React, { useEffect, useState } from "react";
 import NewsComponent from "./newsComponent";
+import axios from "axios";
+import { formatDistance } from "date-fns";
 
 const news = [
   {
@@ -35,18 +38,37 @@ const news = [
   },
 ];
 //
-
+interface newsType {
+  title:string;
+  description:string;
+  createdAt:string;
+  includeSeconds?:boolean
+}
 const News = () => {
+  const [newsData,setNewsData] = useState<newsType[]>([]);
+  useEffect(()=>{
+    const fetchData = async ()=>{
+      try {
+        const res = await axios.get("/api/news");
+        console.log(res)
+        setNewsData(res.data)
+      } catch (error) {
+        
+      }
+
+    }
+    fetchData()
+  },[])
   return (
     <div className="min-h-screen flex flex-col">
       <h2 className="font-light text-2xl">Our Latest News</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-16 h-5/6 mt-16">
-        {news.map((data, index) => {
+        {newsData.map((data, index) => {
           return (
             <NewsComponent
               key={index}
-              content={data.content}
-              date={data.date}
+              content={data.description}
+              date={formatDistance(new Date(), new Date(data.createdAt), { addSuffix: true })}
               title={data.title}
             />
           );
