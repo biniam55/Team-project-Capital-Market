@@ -53,6 +53,14 @@ const Navbar = () => {
           >
             <Link href={"/"}>Home  </Link>
           </li>
+           {session && (
+            <li
+              className={`${scrolled && "text-white"
+                } nav-item transition-all text-center after:bg-capital-purple`}
+            >
+              <Link href={"/dashboard"}>Dashboard </Link>
+            </li>
+          )}
           <li
             className={`${scrolled && "text-white"
               } nav-item transition-all text-center after:bg-capital-purple`}
