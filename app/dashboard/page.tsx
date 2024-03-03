@@ -51,7 +51,7 @@ const Page = () => {
       },
       title: {
         display: true,
-        text: "Daily Analysis", // Changed the chart title
+        text: "Daily Analysis", 
       },
     },
   };
@@ -75,8 +75,16 @@ const Page = () => {
               label: "News Count by Day",
               data: datasetData,
               fill: false,
-              backgroundColor: "rgba(54, 162, 235, 0.5)", // Customize color if needed
-              borderColor: "rgba(54, 162, 235, 0.8)", // Customize color if needed
+             backgroundColor: [ 
+              'rgba(54, 162, 235, 0.8)', 
+              'rgba(255, 99, 132, 0.8)', 
+              'rgba(75, 192, 192, 0.8)', 
+            ],
+            borderColor: [ 
+            'rgba(54, 162, 235, 1)', 
+            'rgba(255, 99, 132, 1)', 
+            'rgba(75, 192, 192, 1)', 
+          ],
             },
           ],
         });
