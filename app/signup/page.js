@@ -42,7 +42,7 @@ const SignUp = () => {
     }
 
     if (!password || password.length < 8) {
-      setError("Password is invalid");
+      setError("Use password 8 characters or above");
       return;
     }
 
